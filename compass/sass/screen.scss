@@ -1,0 +1,112 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset";
+
+// To configure blueprint, edit the partials/base.sass file.
+@import "partials/base";
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import "blueprint";
+
+// Import the non-default scaffolding module.
+@import "blueprint/scaffolding";
+@import "compass/css3";
+
+@include blueprint;
+@import "blueprint/grid";
+
+
+body {
+   background: #f6f1e8;
+   font-size: 15px;
+   font-family: Verdana, Arial, sans-serif;
+}
+
+#wrapper {
+   background: #ffffff;
+   padding: 0px 41px 41px 41px;
+   @include box-shadow(#ece6dd 3px 3px 4px );
+   margin-bottom: 50px;
+}
+
+#main {
+   background: #f5efe1;
+   
+}
+
+header {
+   margin-top: 24px;
+}
+
+nav {
+   margin-top: -70px;
+   margin-bottom: 7px;
+   ul {
+      text-align:right;
+      li {
+         display:inline;
+         margin-left: 15px;
+
+      }
+   }
+}
+
+footer {
+   font-size: 11px;
+   color: #999;
+   margin-top: 13px;
+   #footer_inner a {
+      color: #999;
+      &:hover {
+         color: #991511;
+      }
+   }
+}
+
+#publisher {
+   color: #800c08;
+   font-size: 14px;
+   padding-top: 28px;
+}
+
+#magazin-list {
+   list-style:none;
+   padding: 0px 0px 0px 0px;
+   li {
+      float:left;
+      width: 110px;
+      margin-right: 20px;
+      margin-bottom: 22px;
+      .magazin-title {
+         font-size: 11px;
+         color: #192426;
+      }
+   }
+}
+
+#content {
+   margin-top: 20px;
+}
+
+a {
+   text-decoration:none;
+   color: #0f0f0f;
+   &:hover {
+      color: #991511;
+   }
+}
+
+body.bp {
+  @include blueprint-typography(true);
+  @include blueprint-utilities;
+  @include blueprint-debug;
+  @include blueprint-interaction;
+  // Remove the scaffolding when you're ready to start doing visual design.
+  // Or leave it in if you're happy with how blueprint looks out-of-the-box
+}
+
+form.bp {
+  //@include blueprint-form;
+  // You'll probably want to remove the scaffolding once you start styling your site.
+  //@include blueprint-scaffolding; 
+}
+
